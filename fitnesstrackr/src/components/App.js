@@ -1,7 +1,7 @@
 import Home from './Home';
 import Routines from './Routines';
 import Navbar from './Navbar'
-// import './App.css';
+import Register from './Register'
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import {useState, useEffect} from 'react';
@@ -21,10 +21,11 @@ function App() {
           <Routes>
             <Route path="/home" element={<Home />} ></Route>
             <Route path="/routines" element={<Routines routines={routines} setRoutines={setRoutines} />}></Route>
+            <Route path="/register" element={<Register />} ></Route>
+            
           </Routes>
         </div>
       </div>
-      
     </Router>
   );
 }
