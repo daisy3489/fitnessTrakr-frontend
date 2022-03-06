@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = "https://guarded-meadow-11677.herokuapp.com/api";
+const BASE_URL = "https://fitnesstrac-kr.herokuapp.com/api";
 
 //export const getRoutines = await axios.get(`${BASE_URL}/routines`)
 
@@ -9,6 +9,6 @@ const BASE_URL = "https://guarded-meadow-11677.herokuapp.com/api";
 //axios is promise based so we .then
 export const getRoutines = axios.get(`${BASE_URL}/routines`)
 .then(res => {
-    const persons = res.data;
-    this.setState({ persons });
+    // const persons = res.data;
+    // this.setState({ persons });
 })

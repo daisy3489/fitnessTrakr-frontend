@@ -11,10 +11,10 @@ const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 //requires 1 lower case char, 1 uppercase char, 1 number, and 1 special char. must be between 8-24 char.
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
-const REGISTER_URL = '/registter'
+const REGISTER_URL = '/users/register'
 
 
-const Register = () => {
+const Register = ({setToken}) => {
     //will allow us to set focus on user input when component loads
     const userRef = useRef();
     //if we get an error, we need to put the focus on error
@@ -87,17 +87,29 @@ const Register = () => {
         }
         try{
             const response = await axios.post(REGISTER_URL, 
-                JSON.stringify({user, password}),
+                JSON.stringify({username: user, password}),
                 {
                     headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
+                    withCredentials: false
                 }
             );
 
-            console.log("RESPONSE IN SUBMIT HANDLER: ", JSON.stringify(response));
-            setSuccess(true);
+            //console.log("RESPONSE IN SUBMIT HANDLER: ", JSON.stringify(response));
+            
             //maybe clear input field here
 
+            //WHAT WE GET BACK FROM THE SERVER
+    
+
+            console.log("REGISTER CONTENT: ", response)
+
+            const token = response.data.token
+
+            console.log('TOKEN: ', token)
+
+            setToken(token);
+            setSuccess(true);
+            
         }catch (error){
             // if no err response using optional chaining. maybe we lost connection with server. then return message
             if(!error?.response){
