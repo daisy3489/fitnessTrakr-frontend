@@ -10,7 +10,7 @@ const Login = ({setToken, user, setUser}) => {
     //if we successfully authenticate when we login, we will use setAuth state and store it in the global context
     const {setAuth} = useContext(AuthContext);
 
-    console.log('LOGIN USER: ', user)
+    //console.log('LOGIN USER: ', user)
 
     //to set focus on the username input when the component first loads
     const userRef = useRef();
@@ -54,16 +54,17 @@ const Login = ({setToken, user, setUser}) => {
             //get back the data property that is inside of the response
             console.log('LOGIN RESPONSE.DATA: ', response.data)
 
-            console.log('RESPONSE.DATA.USER: ', response.data.user )
+            //console.log('RESPONSE.DATA.USER: ', response.data.user )
 
             const newToken = response.data.token
-           
-            
+            const newUser = response.data.user ;
+
             //token will need to be stored on state 
             setToken(newToken);
-
-            //set the user
-            setUser(response.data.user)
+            console.log('token', newToken);
+            //set the user in state
+            setUser(newUser);
+            console.log('NEWUSER: ', newUser);
 
             //save data to local storage
             localStorage.setItem('token', newToken);
@@ -72,7 +73,6 @@ const Login = ({setToken, user, setUser}) => {
             const roles = response?.data?.roles;
             setAuth({ user, password, roles, accessToken });
 
-            console.log('LOGIN USER: ', user)
 
             //clear user and password and set success status to true
             setUser('');

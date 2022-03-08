@@ -1,5 +1,6 @@
 import Home from './Home';
 import Routines from './Routines';
+import Activities from './Activities';
 import Navbar from './Navbar'
 import Register from './Register'
 import Login from './Login'
@@ -15,7 +16,7 @@ function App() {
   const [user, setUser] = useState({username: '', password: ''});
   const [routines, setRoutines] = useState({});
 
-
+  console.log('APP USER: ', user);
 
   //function runs everytime there is a rerender. once initially when component first loads and again whenever a change is made
   //by making the useEffect() function an async function, it automatically returns a Promise 
@@ -33,9 +34,9 @@ function App() {
       .then((response) => {
         return response.json();
       })
-      .then((userInfo) => {
-        setUser(userInfo.data)
-      })
+      // .then((userInfo) => {
+      //   setUser(userInfo.data)
+      // })
       .then(result => {
         console.log('APP useEffect result: ', result);
       })
@@ -66,6 +67,7 @@ function App() {
           <Routes>
             <Route path="/home" element={<Home />} ></Route>
             <Route path="/routines" element={<Routines routines={routines} setRoutines={setRoutines} />}></Route>
+            <Route path="/activities" element={<Activities />}></Route>
             <Route path="/users/register" element={<Register setToken={setToken} user={user}/>} ></Route>
             <Route path="/users/login" element={<Login token={token} setToken={setToken} user={user} setUser={setUser} />} ></Route>
             <Route exact path="/users/me" element={<ProfilePage Logout={Logout} user={user}></ProfilePage>}></Route>

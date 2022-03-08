@@ -11,8 +11,8 @@ const Home = () => {
                 <button className="btn"><Link to="/routines">See Public Routines</Link></button>
             </div>
             <div className="col2">
-                <img src="/" className="homeImage" alt="" />
-                <div className="colorBox"></div>
+                <img src="https://cdn.pixabay.com/photo/2014/04/03/10/22/weightlifting-310218_1280.png" className="homeImage" alt="" />
+                {/* <div className="colorBox"></div> */}
             </div>
             
         </div>

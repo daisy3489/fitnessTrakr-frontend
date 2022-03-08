@@ -7,6 +7,7 @@ const Navbar = ({token}) => {
             <div className="links">
                 <Link to='/home'>Home</Link>
                 <Link to='/routines'>Routines</Link>
+                <Link to='/activities'>Activities</Link>
                 {/* if token, show profile page, else if NO token, show login link */}
                 {token && <Link to='/users/me'>Profile</Link> }
                 {!token && <Link to='/users/login'>Login</Link>}
