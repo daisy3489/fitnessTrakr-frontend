@@ -2,6 +2,8 @@ import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
+import MyRoutines from './MyRoutines'
+
 
 const ProfilePage = ({Logout, user}) => {
     console.log('PROFILE USER: ', user)
@@ -15,9 +17,9 @@ const ProfilePage = ({Logout, user}) => {
                         <img src='https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png' alt=''></img>
                     </div>
                     <ul>
-                        <li className=''>Routines Created by Me</li>
+                        
                         {/* <li><Link to='/myPosts'>Posts created by me</Link></li> */}
-                        <li><Link to='/CreateRoutines'>Create New Routines</Link></li>
+                        <li><Link to='/myroutines'>My Routines</Link></li>
                         <li><Link to='/viewMessages'>Message Center </Link></li>
                         
                     </ul>

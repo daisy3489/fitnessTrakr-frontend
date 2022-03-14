@@ -420,3 +420,29 @@ label {
   font-weight: 500;
 }
 
+
+.activities{
+  padding: 10px;
+
+}
+
+.Routines{
+
+  padding: 10px;
+  border-color: #000;
+  border-width: 2px;
+}
+
+
+.R_activities{
+
+  padding: 9px;
+}
+
+.activityp{
+  font-weight: 900;
+  
+}
+
+
+

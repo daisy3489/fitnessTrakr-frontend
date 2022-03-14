@@ -1,6 +1,14 @@
 import {Link} from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Navbar = ({token}) => {
+
+    useEffect(() => {
+       
+    }, [token]);
+
+
+    
     return (
         <nav className="navbar">
             <h1><Link to="/home">Fitness Trakr</Link></h1>
