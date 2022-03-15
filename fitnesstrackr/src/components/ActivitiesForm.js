@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import  { useState } from 'react';
 import { addActivity } from "../api";
 
 
@@ -29,12 +29,23 @@ const handleSubmit = async (event) =>{
 
 
 	return <>
-
     
      <form className='addActivities' onSubmit={handleSubmit} >
-		<input value={newActivities.name|| ''} placeholder='Name' onChange={(event) => {setNewActivities({...newActivities, name: event.target.value})}} />
-		<input value={newActivities.description|| ''} placeholder='Description' onChange={(event) => {setNewActivities({...newActivities, description: event.target.value})}} />
-		<button>Submit</button>
+
+      <div className='form-inner'> 
+        <h2>Create new Activity</h2>
+        <div className="form-group">
+          <label htmlFor="activityName">Activity Name: </label>
+          <input value={newActivities.name|| ''} placeholder='Name' onChange={(event) => {setNewActivities({...newActivities, name: event.target.value})}} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="activityDescription">Activity Description: </label>
+          <input value={newActivities.description|| ''} placeholder='Description' onChange={(event) => {setNewActivities({...newActivities, description: event.target.value})}} />
+        </div>
+      </div>
+
+      <button>Submit</button>
+      
 	  </form> 
     
     </>

@@ -49,6 +49,7 @@ const MyRoutines = ({ token, setRoutines, routines, username, activities, setAct
         <>
             <h2>Add Routine</h2>
             <RoutinesForm  routines={routines}setRoutines= {setRoutines} token = {token} />
+
             <h2>Current created routines</h2>
             <div>
             {routines.map(routine =>{
@@ -59,6 +60,7 @@ const MyRoutines = ({ token, setRoutines, routines, username, activities, setAct
                 <h2> Name: {routine.name} </h2> 
                 <p>Goal: {routine.goal} </p> 
                 <p>Creator Name: {routine.creatorName} </p> 
+                
                 <div>
                        { <AddActivityToRoutineForm 
                         token = {token} routineId = {routine.id} setRoutines ={setRoutines} />} 
@@ -68,9 +70,9 @@ const MyRoutines = ({ token, setRoutines, routines, username, activities, setAct
                     return(
                     <div key = {activitie.routineActivityId} className ="R_activities" >
                        <h4> ACTIVITIES FOR THIS ROUTINE </h4> 
-                    <p>  Name: {activitie.name} </p>
-                    <p>  Descriotion: {activitie.description} </p>
-                    <p>  Duration: {activitie.duration} </p>
+                        <p>  Name: {activitie.name} </p>
+                        <p>  Descriotion: {activitie.description} </p>
+                        <p>  Duration: {activitie.duration} </p>
                     </div>
                     )
                 })}

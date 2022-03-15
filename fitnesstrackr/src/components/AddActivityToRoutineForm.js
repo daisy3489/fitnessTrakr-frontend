@@ -27,7 +27,7 @@ const AddActivityToRoutineForm = ({ token,routineId, setRoutines }) => {
 
   useEffect(() => {
     handleActivities()
-    }, []);
+    });
 
 
     // console.log(allActivities)
@@ -53,32 +53,30 @@ const AddActivityToRoutineForm = ({ token,routineId, setRoutines }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Add an activity to this routine</h2>
-      <label>Activity</label>
-      <select
-        value={activityId}
-        onChange={(event) => {
-          setActivityId(event.target.value);
-        }}
-      >
-        {allActivities.map((activity) => {
-          return (
-            <option value={activity.id} key={activity.id}>
-              {activity.name}
-            </option>
-          );
-        })}
-      </select>
-      <label>Count</label>
-      <input
-        value={count}placeholder='Count' onChange={(event) => setCount(event.target.value)}
-        type="number"
-      />
-      <label>Duration</label>
-      <input
-        value={duration} placeholder='Duration' onChange={(event) => setDuration(event.target.value)}
-        type="number"
-      />
+      <div className="form-inner">
+        <h2>Add Activity to Routine</h2>
+        <div className="form-group">
+          <label htmlFor="activityOptions">Options</label>
+          <select id="activityOptions" name="activityOptions" value={activityId} onChange={(event) => {setActivityId(event.target.value);}}>
+            {allActivities.map((activity) => {
+              return (
+                <option value={activity.id} key={activity.id}>
+                  {activity.name}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+        <div className="form-group">
+          <label htmlFor="activityCount">Count</label>
+          <input id="activityCount" value={count} placeholder='Count' onChange={(event) => setCount(event.target.value)} type="number"/>
+        </div>
+        <div className="form-group">
+          <label htmlFor="activityDuration">Duration</label>
+          <input name="activityDuration" id="activityDuration" value={duration} placeholder='Duration' onChange={(event) => setDuration(event.target.value)} type="number" />
+        </div>
+      </div>
+      
       <button type="submit">Submit</button>
     </form>
   );
