@@ -3,7 +3,7 @@ import { getRoutines, deleteRoutine } from "../api";
 import { useEffect} from "react";
 import RoutinesForm from "./RoutinesForm";
 import AddActivityToRoutineForm from "./AddActivityToRoutineForm";
-import id from "faker/lib/locales/id_ID";
+//import id from "faker/lib/locales/id_ID";
 
 const MyRoutines = ({ token, setRoutines, routines, username, activities, setActivities}) => {
     
