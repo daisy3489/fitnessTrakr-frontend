@@ -436,6 +436,9 @@ label {
 
   padding: 9px;
 }
+.R_activities h4 {
+  color: var(--orange);
+}
 
 .activityp{
   font-weight: 900;
@@ -506,3 +509,37 @@ label {
   font-weight: 700;
   cursor: pointer;
 }
+
+/* ======= All public Routines ======= */
+.single-routine {
+  flex-basis: 200px;
+  flex-grow: 1;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+  margin: 5px 10px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.header-info {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 10px;
+}
+
+.header-info h2 {
+  margin-bottom: 10px;
+}
+
+.goal {
+  font-size: x-large;
+}
+
+.creator {
+  font-style: italic;
+}
+
+

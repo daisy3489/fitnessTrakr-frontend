@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
-import MyRoutines from './MyRoutines'
+//import MyRoutines from './MyRoutines'
 
 
 const ProfilePage = ({Logout, user}) => {

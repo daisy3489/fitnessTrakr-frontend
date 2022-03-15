@@ -38,7 +38,7 @@ const [newRoutine, setNewRoutine] = useState({})
             </div>
             <div className="form-group">
               <label htmlFor="goal">Goal</label>
-              <input name="goal" id="goal" type="text" value={newRoutine.goal|| ''}  onChange={(event) => {setNewRoutine({...newRoutine, goal: event.target.value})}} />
+              <input name="goal" id="goal" type="text" autoComplete="off" value={newRoutine.goal|| ''}  onChange={(event) => {setNewRoutine({...newRoutine, goal: event.target.value})}} />
             </div>
             <div className="form-group">
               <label htmlFor="isPublic">Is Public?</label>
